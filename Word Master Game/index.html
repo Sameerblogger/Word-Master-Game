@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Master Game</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.io/favicon-16x16.png">
+  <link rel="manifest" href="/favicon.io/site.webmanifest">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Create a script element for ShareThis
+      const shareScript = document.createElement("script");
+      shareScript.type = "text/javascript";
+      shareScript.src = "https://platform-api.sharethis.com/js/sharethis.js#property=671c4f2bf9d5250012f5d8ea&product=inline-share-buttons&source=platform";
+      shareScript.async = true;
+      document.head.appendChild(shareScript);
+
+      // Optional: Log a message when the ShareThis script is loaded
+      shareScript.onload = function () {
+        console.log("ShareThis script loaded successfully");
+        // If you have any ShareThis-related code, add it here
+      };
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Dark Mode Toggle Bar -->
+    <label class="switch">
+      <input type="checkbox" id="dark-mode-toggle">
+      <span class="slider round"></span>
+    </label>
+    <p id="dark-mode-label">Enable Dark Mode</p>
+
+    <h1>Welcome to the Word Master Game</h1>
+    <p id="game-instructions">Type the correct word or use the virtual keyboard to guess letters!</p>
+
+    <!-- Game content -->
+    <div id="game-area">
+      <!-- Difficulty Selection -->
+      <h2>Select Difficulty</h2>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <h3>Guess the Word:</h3>
+
+      <div id="word-container"></div>
+      <p id="hint"></p>
+
+      <input type="text" id="word-input" maxlength="20" placeholder="Type your word here">
+      <button id="submit-word">Submit</button>
+
+      <!-- Virtual Keyboard -->
+      <div id="keyboard"></div>
+
+      <p>Tries Left: <span id="tries">6</span></p>
+      <p id="message"></p>
+      <button id="restart-game" class="hidden">Restart Game</button>
+    </div>
+    <!-- Social Share Buttons -->
+    <h3>Share This Game:</h3>
+    <div class="sharethis-inline-share-buttons"></div>
+    <!-- Winning Pop-up Modal -->
+    <div id="win-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Congratulations! 🎉</h3>
+        <p>You guessed the word correctly! Well done!</p>
+        <button id="play-again">Play Again</button>
+      </div>
+    </div>
+    <hr>
+    <!-- Sections for instructions and FAQs -->
+    <section id="how-to-play">
+      <h3>Word Master Game Play Free Online</h3>
+      <p>Type the correct word or use the virtual keyboard to guess letters! You have a limited number of tries based on
+        the selected difficulty.</p>
+      <hr>
+      <h3>How to Play Word Master Game Online?</h3>
+      <p>In this game, your objective is to guess the hidden word by typing letters or clicking the virtual keyboard.
+        Based on your selected difficulty level, you will receive different numbers of hints and tries.</p>
+      <ul>
+        <li><strong>Easy:</strong>You get 8 tries and 2 hints.</li>
+        <li><strong>Medium:</strong>You get 6 tries and 1 hint.</li>
+        <li><strong>Hard:</strong>You get 6 tries and 1 hint.</li>
+      </ul>
+      <p>To submit your guess, either type your word into the input field or click the letters on the virtual keyboard.
+        <hr>
+      </p>
+    </section>
+    <h4>Difficulty Levels of Word Master Game</h4>
+    <p>Choose the difficulty level before starting the game. The options are:</p>
+    <ul>
+      <li><strong>Easy:</strong>More tries and hints for beginners.</li>
+      <li><strong>Medium:</strong>A balanced challenge with fewer tries and hints.</li>
+      <li><strong>Hard:</strong>For experienced players who want a real challenge.</li>
+    </ul>
+    <hr>
+    <h4>Hints of Word Master Wordle Game</h4>
+    <p>Choose the difficulty level before starting the game. The options are:</p>
+    <ul>
+      <li><strong>Easy:</strong>You receive two hints during the game.</li>
+      <li><strong>Medium:</strong>You receive one hint.</li>
+      <li><strong>Hard:</strong>No hints are provided, making it more challenging.</li>
+    </ul>
+    <hr>
+    <h5>Use of Virtual Keyboard</h5>
+    <p>The virtual keyboard allows you to guess letters by clicking on them instead of typing. This feature can be
+      especially helpful for younger players or those who prefer a more visual approach to guessing.</p>
+    <hr>
+    <section id="faq">
+      <h5>FAQs</h5>
+      <h6>1. How many words are there in the game?</h6>
+      <p>There are 200+ words included, which consist of fruits, vegetables, and some general words, and each word is
+        selected randomly for every game session.</p>
+
+      <h6>2. What happens if I make an incorrect guess?</h6>
+      <p>You will lose one try. If your tries reach zero, the game ends, and the correct word will be revealed.</p>
+
+      <h6>3. Can I restart the game after I win or lose?</h6>
+      <p>Yes, after the game ends, a restart button will appear, allowing you to play again.</p>
+
+      <h6>4. How does the virtual keyboard work?</h6>
+      <p>The virtual keyboard allows you to click letters instead of typing them. This can help you guess the word
+        without needing to use the keyboard.</p>
+
+      <h6>5. Is there a mobile version of the game?</h6>
+      <p>Yes, the game is designed to be responsive and works well on mobile devices.</p>
+
+      <h6>6. What if I need help with the game rules?</h6>
+      <p>Refer to the "How to Play" section for detailed instructions. You can also check the FAQs for common
+        questions.</p>
+
+
+    </section>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Word Master Game. All Rights Reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="abc.html">Home</a> |
+      <a href="/pages/about.html">About Us</a> |
+      <a href="/pages/contact.html">Contact Us</a> |
+      <a href="/pages/privacy.html">Privacy Policy</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

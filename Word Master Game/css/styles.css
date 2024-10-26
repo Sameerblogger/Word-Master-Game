@@ -1,0 +1,431 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #2c2c2c;
+}
+
+.dark-mode .container {
+  background-color: #3b3b3b;
+  color: #e0e0e0;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p {
+  color: #e0e0e0;
+}
+
+.dark-mode #word-container {
+  color: #fff;
+}
+
+.dark-mode .key {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.dark-mode .key:hover {
+  background-color: #666;
+}
+
+.dark-mode button {
+  background-color: #5cb85c;
+}
+
+.dark-mode button:hover {
+  background-color: #4cae4c;
+}
+
+.dark-mode .modal-content {
+  background-color: black;
+}
+
+/* Switch Toggle Button Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+/* Additional Styling */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3,
+h4,
+h5 {
+  font-size: 26px;
+}
+
+h6 {
+  font-size: 24px;
+}
+
+#faq h5 {
+  font-size: 26px;
+}
+
+#faq h6 {
+  font-size: 20px;
+}
+
+#faq p {
+  font-size: 17px;
+}
+
+#how-to-play h3,
+h4,
+h5 {
+  font-size: 26px;
+}
+
+#how-to-play p li {
+  font-size: 18px;
+}
+
+p {
+  font-size: 17px;
+}
+
+ul {
+  font-size: 17px;
+}
+
+#game-instructions {
+  text-align: center;
+}
+
+#dark-mode-label {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#game-area {
+  text-align: center;
+}
+
+#word-container {
+  font-size: 2em;
+  letter-spacing: 10px;
+}
+
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 20px auto;
+  padding: 40px 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.key:hover {
+  background-color: #0056b3;
+}
+
+#word-input {
+  margin-top: 20px;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#message {
+  color: #ff4757;
+  /* Vibrant red */
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* Adds a subtle shadow for depth */
+  transition: transform 0.3s ease, color 0.3s ease;
+  /* Smooth animation */
+  margin-top: 20px;
+}
+
+/* Success messages in green */
+#message.success {
+  color: #2ed573;
+}
+
+/* Wrong messages in red */
+#message.wrong {
+  color: #ff4757;
+}
+
+/* Add animation when the message changes */
+#message.shake {
+  animation: shake 0.5s ease;
+}
+
+/* Keyframes for the shake animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#tries {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#restart-game {
+  background-color: #ffc107;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#restart-game:hover {
+  background-color: #e0a800;
+}
+
+@media (max-width: 600px) {
+  #keyboard {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+#how-to-play,
+#faq {
+  margin-top: 10px;
+}
+
+#faq h6 {
+  margin-bottom: 5px;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1000;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black with opacity */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less depending on screen size */
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+#play-again {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#play-again:hover {
+  background-color: #45a049;
+}
+
+#difficulty {
+  /* Add your styles here */
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: #333;
+}
+
+footer a {
+  color: #007BFF;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dark Mode Footer Styles */
+body.dark-mode footer {
+  background-color: #333;
+  /* Dark background for footer */
+  color: #f1f1f1;
+  /* Light text color in dark mode */
+}
+
+body.dark-mode footer a {
+  color: #1DA1F2;
+  /* Light blue color for links in dark mode */
+}
+
+body.dark-mode footer a:hover {
+  color: #fff;
+  /* White color on hover in dark mode */
+  text-decoration: underline;
+}
+
+.sharethis-inline-share-buttons {
+  margin-bottom: 40px;
+}
+
+hr {
+  border: none;
+  /* Remove default border */
+  height: 2px;
+  /* Set the height of the line */
+  background-color: #4CAF50;
+  /* Set a color for the line */
+  margin: 20px 0;
+  /* Add vertical space above and below the line */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  /* Optional: Add shadow for depth */
+}
