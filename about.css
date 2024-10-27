@@ -44,45 +44,42 @@ li {
     /* Space between list items */
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    footer nav {
-        display: flex;
-        flex-direction: column;
-        /* Stack links on smaller screens */
-        margin-top: 10px;
-    }
-
-}
-
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background-color: #f1f1f1;
-    margin: 0;
-    position: relative;
-    width: 100%;
     color: #333;
+    margin: 0;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-}
-
-footer a {
+  }
+  
+  footer a {
     color: #007BFF;
-    /* Link color */
     text-decoration: none;
-    margin: 5px 0;
-    /* Space between links on smaller screens */
-}
-
-footer a:hover,
-footer a:focus {
+    margin: 5px 10px;
+  }
+  
+  footer a:hover {
     text-decoration: underline;
-}
+  }
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    footer {
+        padding: 10px;                /* Reduced padding for smaller screens */
+    }
+  
+    footer a {
+        margin: 5px 0;               /* Reduced margin between links */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    footer {
+        padding: 8px;                /* Further reduced padding for very small screens */
+    }
+  
+    footer a {
+        font-size: 14px;              /* Adjust font size for better readability */
+        margin: 0 2px;                /* Further reduced margin between links */
+    }
+  }
